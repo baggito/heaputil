@@ -4,8 +4,6 @@ Tiny helper library around Go's `container/heap` that gives you a simple, typed 
 
 No more copy-pasting the same `IntHeap` boilerplate into every LeetCode solution, coding exercise, or production service.
 
----
-
 ## Features
 
 - `int`-only heap, focused and fast
@@ -13,15 +11,6 @@ No more copy-pasting the same `IntHeap` boilerplate into every LeetCode solution
 - Fully compatible with `container/heap`
 - Pointer receivers only (no mixed receiver semantics)
 - Tiny API, easy to remember
-
-Module path:
-
-```bash
-go get github.com/baggito/heaputil
-
-# heaputil
-
-A simple, idiomatic Go package for min-heap and max-heap operations on integers.
 
 ## Quick Start
 
@@ -188,8 +177,8 @@ func (h *IntHeap) Data() []int
 
 ```go
 import (
-    "container/heap"
-    "github.com/baggito/heaputil"
+	"container/heap"
+	"github.com/baggito/heaputil"
 )
 
 h := heaputil.NewMinIntHeap(3, 1, 2)
@@ -201,8 +190,8 @@ x := heap.Pop(h).(int)   // 0
 
 - Single type `IntHeap` for both min-heap and max-heap behavior
 - Behavior is driven by an internal comparator:
-    - min-heap: `a < b`
-    - max-heap: `a > b`
+  - min-heap: `a < b`
+  - max-heap: `a > b`
 - All methods use pointer receivers (`*IntHeap`) to avoid the usual value/pointer confusion
 - Focused on `int` for simplicity and minimal API surface
 
